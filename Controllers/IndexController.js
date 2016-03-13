@@ -12,11 +12,11 @@ angular.module("myApp", ["ui.bootstrap", "ngSanitize"])
             },
             {
                 title:"履歴",
-                url: "templates/input.html"
+                url: "Templates/Aggregate.html"
             },
             {
                 title: "集計",
-                url: "templates/input.html"
+                url: "Templates/History.html"
             }
         ];
         $scope.logging = function(title){
