@@ -3,11 +3,12 @@
  */
 
 angular.module("myApp", ["ui.bootstrap", "ngSanitize"])
-    .controller("HomeController", ["$scope", function($scope){
+    .controller("IndexController", ["$scope", function($scope){
+        $scope.aaa = "aaa";
         $scope.templates = [
             {
                 title:'入力',
-                url: "templates/input.html"
+                url: "Templates/Input.html"
             },
             {
                 title:"履歴",
