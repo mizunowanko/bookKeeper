@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myApp" lang="ja">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="Controllers/module.js"></script>
+    <script src="Controllers/inputController.js"></script>
+    <script src="Controllers/indexController.js"></script>
+</head>
+<body ng-controller="IndexController">
+    <button ui-sref="input()">入力</button>
+    <button ui-sref="history()">履歴</button>
+    <button ui-sref="aggregate()">集計</button>
+    <div ui-view></div>
+</body>
+</html>
