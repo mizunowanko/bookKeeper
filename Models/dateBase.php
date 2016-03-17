@@ -35,5 +35,4 @@ class DateBase
     public function disConnect(){
         $this->pdo = null;
     }
-
 }

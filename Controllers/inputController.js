@@ -8,10 +8,17 @@ app.controller("inputController",
         "$scope",
         "$resource",
         function($scope, $resource){
-            var Account = $resource(
-                "Models/resource.php"
+            var AccountLargeCategory = $resource(
+                "Models/accountLargeCategory.php"
             );
-            $scope.accounts = Account.query();
+            var AccountSmallCategory = $resource(
+                "Models/accountSmallCategory.php/:id",
+                {id: "@id"}
+            );
+            $scope.accountLargeCategories = AccountLargeCategory.query();
+            $scope.getAccountSmallCategoryById = function(id){
+                $scope.accountSmallCategories = AccountSmallCategory.get({id: id});
+            };
         }
     ]
 );

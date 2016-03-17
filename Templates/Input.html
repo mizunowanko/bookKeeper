@@ -1,4 +1,6 @@
 <div>
-    <select ng-model="accountId" ng-options="account.id as account.name for account in accounts"></select>
+    <select id="debit_account_large_category" ng-model="accountLargeCategoryId" ng-options="accountLargeCategory.id as accountLargeCategory.name for accountLargeCategory in accountLargeCategories" ng-change="getAccountSmallCategoryById(accountLargeCategoryId)">
+        <option value="">大分類</option>
+    </select>
 </div>
-{{accountId}}
+{{accountSmallCategories}}
