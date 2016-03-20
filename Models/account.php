@@ -2,9 +2,10 @@
 /**
  * Created by PhpStorm.
  * User: takashima
- * Date: 16/03/17
- * Time: 22:19
+ * Date: 16/03/19
+ * Time: 10:04
  */
+
 error_reporting(E_ALL & ~E_NOTICE);
 
 require "dateBase.php";
@@ -17,12 +18,7 @@ try{
     switch($_SERVER["REQUEST_METHOD"]){
         case "GET":
             if(is_null($_SERVER["PATH_INFO"])){
-                $statement = $pdo->query("select * from account_small_category");
-                print(json_encode($statement->fetchAll(PDO::FETCH_ASSOC)));
-            }else{
-                $statement = $pdo->prepare("select * from account_small_category where large_category_id = ?");
-                $statement->bindValue(1, explode("/", $_SERVER["PATH_INFO"])[1]);
-                $statement->execute();
+                $statement = $pdo->query("select * from account");
                 print(json_encode($statement->fetchAll(PDO::FETCH_ASSOC)));
             }
             break;
@@ -32,4 +28,3 @@ try{
 }catch(PDOException $e){
     die($e->getMessage());
 }
-$db->disConnect();
