@@ -3,7 +3,7 @@
  */
 
 
-app.factory("AccountDetail",
+app.factory("JournalizationDetail",
     function(row, accountLargeCategories, accountSmallCategories, accounts){
         return{
             //各科目の全データ

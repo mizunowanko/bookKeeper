@@ -27,6 +27,9 @@ app.controller("inputController",
             );
             $scope.accounts = Account.query();
 
+
+
+
             //借方の科目データのscopeを初期化
             $scope.debitAccountLargeCategories = $scope.accountLargeCategories;
             $scope.debitAccountSmallCategories = [];
