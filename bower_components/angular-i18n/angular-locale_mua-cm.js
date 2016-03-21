@@ -59,7 +59,7 @@ $provide.value("$locale", {
     ],
     "SHORTDAY": [
       "Cya",
-      "Cla",
+      "Class",
       "Czi",
       "Cko",
       "Cka",

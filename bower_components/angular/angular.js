@@ -22838,7 +22838,7 @@ var ngCloakDirective = ngDirective({
  *
  * MVC components in angular:
  *
- * * Model — Models are the properties of a scope; scopes are attached to the DOM where scope properties
+ * * Model — APIs are the properties of a scope; scopes are attached to the DOM where scope properties
  *   are accessed through bindings.
  * * View — The template (HTML with data bindings) that is rendered into the View.
  * * Controller — The `ngController` directive specifies a Controller class; the class contains business
@@ -25754,7 +25754,7 @@ var ngOptionsMinErr = minErr('ngOptions');
  * be nested into the `<select>` element. This element will then represent the `null` or "not selected"
  * option. See example below for demonstration.
  *
- * ## Complex Models (objects or collections)
+ * ## Complex APIs (objects or collections)
  *
  * **Note:** By default, `ngModel` watches the model by reference, not value. This is important when
  * binding any input directive to a model that is an object or a collection.

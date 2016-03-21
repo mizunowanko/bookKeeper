@@ -11,19 +11,19 @@ app.controller("inputController",
 
             //科目大分類のデータ取得
             var AccountLargeCategory = $resource(
-                "Models/accountLargeCategory.php"
+                "APIs/accountLargeCategory.php"
             );
             $scope.accountLargeCategories = AccountLargeCategory.query();
 
             //科目小分類のデータ取得
             var AccountSmallCategory = $resource(
-                "Models/accountSmallCategory.php"
+                "APIs/accountSmallCategory.php"
             );
             $scope.accountSmallCategories = AccountSmallCategory.query();
 
             //科目のデータ取得
             var Account = $resource(
-                "Models/account.php"
+                "APIs/account.php"
             );
             $scope.accounts = Account.query();
 
@@ -67,4 +67,13 @@ app.controller("inputController",
             }
         }
     ]
+);
+
+app.directive(
+    "accountDetail",
+    function(){
+        return{
+            templateUrl: "Templates/Directive/AccountDetail.html"
+        };
+    }
 );
