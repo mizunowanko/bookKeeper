@@ -7,7 +7,8 @@ app.controller("inputController",
     [
         "$scope",
         "$resource",
-        function($scope, $resource){
+        "JournalizationDetail",
+        function($scope, $resource, JournalizationDetail){
 
             //科目大分類のデータ取得
             var AccountLargeCategory = $resource(
@@ -27,7 +28,13 @@ app.controller("inputController",
             );
             $scope.accounts = Account.query();
 
-
+            //仕訳詳細クラスの配列の作成
+            $scope.journalizationDetailsList=[
+                JournalizationDetail.getNewInstance(0, $scope.accountLargeCategories, $scope.accountSmallCategories, $scope.accounts),
+                JournalizationDetail.getNewInstance(1, $scope.accountLargeCategories, $scope.accountSmallCategories, $scope.accounts),
+                JournalizationDetail.getNewInstance(2, $scope.accountLargeCategories, $scope.accountSmallCategories, $scope.accounts),
+                JournalizationDetail.getNewInstance(3, $scope.accountLargeCategories, $scope.accountSmallCategories, $scope.accounts)
+            ];
 
 
             //借方の科目データのscopeを初期化
@@ -73,10 +80,10 @@ app.controller("inputController",
 );
 
 app.directive(
-    "accountDetail",
+    "journalizationDetail",
     function(){
         return{
-            templateUrl: "Templates/Directive/AccountDetail.html"
+            templateUrl: "Templates/Directive/JournalizationDetail.html"
         };
     }
 );
