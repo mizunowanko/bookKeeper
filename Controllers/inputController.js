@@ -37,30 +37,30 @@ app.controller("inputController",
             $scope.creditAccountSmallCategories = [];
             $scope.creditAccounts = [];
 
-            //科目選択時の
+            //カテゴリ選択時に下位カテゴリを絞り込むイベント
             $scope.selectAccountCategory = function(categoryId, isDebit, isLarge){
                 if(isDebit){
                     if(isLarge){
-                        $scope.debitAccountSmallCategories = _.filter(
+                        $scope.debitAccountSmallCategories = _.where(
                             $scope.accountSmallCategories,
-                            function(x){ return x.account_large_category_id == categoryId; }
+                            { account_large_category_id: categoryId }
                         );
                     }else{
-                        $scope.debitAccounts = _.filter(
+                        $scope.debitAccounts = _.where(
                             $scope.accounts,
-                            function(x){ return x.account_small_category_id == categoryId; }
+                            { account_small_category_id: categoryId}
                         );
                     }
                 }else{
                     if(isLarge){
-                        $scope.creditAccountSmallCategories = _.filter(
+                        $scope.creditAccountSmallCategories = _.where(
                             $scope.accountSmallCategories,
-                            function(x){ return x.account_large_category_id == categoryId; }
+                            { account_large_category_id: categoryId }
                         );
                     }else{
-                        $scope.creditAccounts = _.filter(
+                        $scope.creditAccounts = _.where(
                             $scope.accounts,
-                            function(x){ return x.account_small_category_id == categoryId; }
+                            { account_small_category_id: categoryId}
                         );
                     }
                 }
