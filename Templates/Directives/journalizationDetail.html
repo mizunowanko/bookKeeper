@@ -24,7 +24,7 @@
             </td>
             <td>
                 <select id="debitAccounts[data.row]"
-                        ng-model="debitAccounts[data.row]"
+                        ng-model="debitAccount"
                         ng-options="account.id as account.name for account in data.debitAccounts">
                     <option value="">科目</option>
                 </select>
@@ -47,13 +47,13 @@
             </td>
             <td>
                 <select id="creditAccounts[data.row]"
-                        ng-model="creditAccounts[data.row]"
+                        ng-model="creditAccount"
                         ng-options="account.id as account.name for account in data.creditAccounts">
                     <option value="">科目</option>
                 </select>
             </td>
             <td>
-                <input type="text" id="amount[data.row]" ng-model="amount[data.row]">
+                <input type="text" id="amount[data.row]" ng-model="data.amount">
             </td>
         </tr>
     </table>

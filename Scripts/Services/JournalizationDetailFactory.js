@@ -11,7 +11,7 @@ app.factory("JournalizationDetailFactory",
             this.accountSmallCategories = accountSmallCategories;
             this.accounts = accounts;
 
-            //Templateに紐付けられる各値
+            //selectに紐付けられる値の配列
             this.row = row;
             this.debitAccountLargeCategories = accountLargeCategories;
             this.debitAccountSmallCategories = [];
@@ -19,12 +19,10 @@ app.factory("JournalizationDetailFactory",
             this.creditAccountLargeCategories = accountLargeCategories;
             this.creditAccountSmallCategories = [];
             this.creditAccounts = [];
-            this.amount = 0;
 
-            //Template上でidを指定するときの値
-            this.accountLargeCategoriesId = "accountLargeCategories-" + row;
-            this.accountSmallCategoriesId = "accountSmallCategories-" + row;
-            this.accountsId = "account-" + row;
+            //バインディングされるModel
+
+            this.amount = 0;
         };
         JournalizationDetail.prototype.changeAccountCategory = function(categoryId, isDebit, isLarge){
             if(isDebit){
