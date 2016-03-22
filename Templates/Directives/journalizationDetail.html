@@ -9,8 +9,8 @@
             <td>
                 <select id="debitAccountLargeCategory"
                         ng-model="debitAccountLargeCategoryId"
-                        ng-options="largeCategory.id as largeCategory.name for largeCategory in debitAccountLargeCategories"
-                        ng-change="selectAccountCategory(debitAccountLargeCategoryId, true, true)">
+                        ng-options="largeCategory.id as largeCategory.name for largeCategory in journalizationDetailsList[0]"
+                        ng-change="">
                     <option value="">大分類</option>
                 </select>
             </td>

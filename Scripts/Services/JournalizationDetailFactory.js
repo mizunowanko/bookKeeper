@@ -3,7 +3,7 @@
  */
 
 //仕訳詳細クラス
-app.factory("JournalizationDetail",
+app.factory("JournalizationDetailFactory",
     function(){
         var JournalizationDetail = function(row, accountLargeCategories, accountSmallCategories, accounts){
             //各科目の全データ
@@ -20,6 +20,11 @@ app.factory("JournalizationDetail",
             this.creditAccountSmallCategories = [];
             this.creditAccounts = [];
             this.amount = 0;
+
+            //Template上でidを指定するときの値
+            this.accountLargeCategoriesId = "accountLargeCategories-" + row;
+            this.accountSmallCategoriesId = "accountSmallCategories-" + row;
+            this.accountsId = "account-" + row;
         };
         JournalizationDetail.prototype.selectAccountCategory = function(categoryId, isDebit, isLarge){
             if(isDebit){
@@ -49,7 +54,7 @@ app.factory("JournalizationDetail",
             }
         };
         return {
-            getNewInstance: function(row, accountLargeCategories, accountSmallCategories, accounts){
+            create: function(row, accountLargeCategories, accountSmallCategories, accounts){
                 return new JournalizationDetail(row, accountLargeCategories, accountSmallCategories, accounts);
             }
         };

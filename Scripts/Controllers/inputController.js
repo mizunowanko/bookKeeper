@@ -7,35 +7,22 @@ app.controller("inputController",
     [
         "$scope",
         "$resource",
-        "JournalizationDetail",
-        function($scope, $resource, JournalizationDetail){
-
-            //科目大分類のデータ取得
-            var AccountLargeCategory = $resource(
-                "APIs/accountLargeCategory.php"
-            );
-            $scope.accountLargeCategories = AccountLargeCategory.query();
-
-            //科目小分類のデータ取得
-            var AccountSmallCategory = $resource(
-                "APIs/accountSmallCategory.php"
-            );
-            $scope.accountSmallCategories = AccountSmallCategory.query();
+        "JournalizationDetailFactory",
+        function($scope, $resource, JournalizationDetailFactory){
 
             //科目のデータ取得
-            var Account = $resource(
-                "APIs/account.php"
-            );
-            $scope.accounts = Account.query();
+            $scope.accountLargeCategories = $resource("APIs/accountLargeCategory.php").query();
+            $scope.accountSmallCategories = $resource("APIs/accountSmallCategory.php").query();
+            $scope.accounts = $resource("APIs/account.php").query();
 
             //仕訳詳細クラスの配列の作成
             $scope.journalizationDetailsList=[
-                JournalizationDetail.getNewInstance(0, $scope.accountLargeCategories, $scope.accountSmallCategories, $scope.accounts),
-                JournalizationDetail.getNewInstance(1, $scope.accountLargeCategories, $scope.accountSmallCategories, $scope.accounts),
-                JournalizationDetail.getNewInstance(2, $scope.accountLargeCategories, $scope.accountSmallCategories, $scope.accounts),
-                JournalizationDetail.getNewInstance(3, $scope.accountLargeCategories, $scope.accountSmallCategories, $scope.accounts)
+                JournalizationDetailFactory.create(0, $scope.accountLargeCategories, $scope.accountSmallCategories, $scope.accounts),
+                JournalizationDetailFactory.create(1, $scope.accountLargeCategories, $scope.accountSmallCategories, $scope.accounts),
+                JournalizationDetailFactory.create(2, $scope.accountLargeCategories, $scope.accountSmallCategories, $scope.accounts),
+                JournalizationDetailFactory.create(3, $scope.accountLargeCategories, $scope.accountSmallCategories, $scope.accounts)
             ];
-
+            $scope.journalizationDetail = $scope.journalizationDetailsList[0];
 
             //借方の科目データのscopeを初期化
             $scope.debitAccountLargeCategories = $scope.accountLargeCategories;
@@ -79,11 +66,3 @@ app.controller("inputController",
     ]
 );
 
-app.directive(
-    "journalizationDetail",
-    function(){
-        return{
-            templateUrl: "Templates/Directive/JournalizationDetail.html"
-        };
-    }
-);

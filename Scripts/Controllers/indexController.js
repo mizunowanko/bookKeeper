@@ -34,7 +34,6 @@ app.config(
     [
         "$scope",
         function($scope){
-
         }
     ]
 );
