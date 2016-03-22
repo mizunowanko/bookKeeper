@@ -26,7 +26,7 @@ app.factory("JournalizationDetailFactory",
             this.accountSmallCategoriesId = "accountSmallCategories-" + row;
             this.accountsId = "account-" + row;
         };
-        JournalizationDetail.prototype.selectAccountCategory = function(categoryId, isDebit, isLarge){
+        JournalizationDetail.prototype.changeAccountCategory = function(categoryId, isDebit, isLarge){
             if(isDebit){
                 if(isLarge){
                     this.debitAccountSmallCategories = _.where(

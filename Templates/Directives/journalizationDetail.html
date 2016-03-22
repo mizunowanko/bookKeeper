@@ -7,53 +7,53 @@
         </tr>
         <tr>
             <td>
-                <select id="debitAccountLargeCategory"
-                        ng-model="debitAccountLargeCategoryId"
-                        ng-options="largeCategory.id as largeCategory.name for largeCategory in journalizationDetailsList[0]"
-                        ng-change="">
+                <select id="debitAccountLargeCategories[data.row]"
+                        ng-model="debitAccountLargeCategories[data.row]"
+                        ng-options="largeCategory.id as largeCategory.name for largeCategory in data.debitAccountLargeCategories"
+                        ng-change="data.changeAccountCategory(debitAccountLargeCategories[data.row], true, true)">
                     <option value="">大分類</option>
                 </select>
             </td>
             <td>
-                <select id="debitAccountSmallCategory"
-                        ng-model="debitAccountSmallCategoryId"
-                        ng-options="smallCategory.id as smallCategory.name for smallCategory in debitAccountSmallCategories"
-                        ng-change="selectAccountCategory(debitAccountSmallCategoryId, true, false)">
+                <select id="debitAccountSmallCategories[data.row]"
+                        ng-model="debitAccountSmallCategories[data.row]"
+                        ng-options="smallCategory.id as smallCategory.name for smallCategory in data.debitAccountSmallCategories"
+                        ng-change="data.changeAccountCategory(debitAccountSmallCategories[data.row], true, false)">
                     <option value="">小分類</option>
                 </select>
             </td>
             <td>
-                <select id="debitAccount"
-                        ng-model="debitAccountId"
-                        ng-options="account.id as account.name for account in debitAccounts">
+                <select id="debitAccounts[data.row]"
+                        ng-model="debitAccounts[data.row]"
+                        ng-options="account.id as account.name for account in data.debitAccounts">
                     <option value="">科目</option>
                 </select>
             </td>
             <td>
-                <select id="creditAccountLargeCategory"
-                        ng-model="creditAccountLargeCategoryId"
-                        ng-options="largeCategory.id as largeCategory.name for largeCategory in creditAccountLargeCategories"
-                        ng-change="selectAccountCategory(creditAccountLargeCategoryId, false, true)">
+                <select id="creditAccountLargeCategories[data.row]"
+                        ng-model="creditAccountLargeCategories[data.row]"
+                        ng-options="largeCategory.id as largeCategory.name for largeCategory in data.creditAccountLargeCategories"
+                        ng-change="data.changeAccountCategory(creditAccountLargeCategories[data.row], false, true)">
                     <option value="">大分類</option>
                 </select>
             </td>
             <td>
-                <select id="creditAccountSmallCategory"
-                        ng-model="creditAccountSmallCategoryId"
-                        ng-options="smallCategory.id as smallCategory.name for smallCategory in creditAccountSmallCategories"
-                        ng-change="selectAccountCategory(creditAccountSmallCategoryId, false, false)">
+                <select id="creditAccountSmallCategories[data.row]"
+                        ng-model="creditAccountSmallCategories[data.row]"
+                        ng-options="smallCategory.id as smallCategory.name for smallCategory in data.creditAccountSmallCategories"
+                        ng-change="data.changeAccountCategory(creditAccountSmallCategories[data.row], false, false)">
                     <option value="">小分類</option>
                 </select>
             </td>
             <td>
-                <select id="creditAccount"
-                        ng-model="creditAccountId"
-                        ng-options="account.id as account.name for account in creditAccounts">
+                <select id="creditAccounts[data.row]"
+                        ng-model="creditAccounts[data.row]"
+                        ng-options="account.id as account.name for account in data.creditAccounts">
                     <option value="">科目</option>
                 </select>
             </td>
             <td>
-                <input id="amount" type="text" ng-model="amount">
+                <input type="text" id="amount[data.row]" ng-model="amount[data.row]">
             </td>
         </tr>
     </table>

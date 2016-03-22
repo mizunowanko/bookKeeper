@@ -3,11 +3,11 @@
  */
 
 app.directive(
-    "test",
+    "journalizationDetail",
     function(){
         return{
             restrict: "E",
-            templateUrl: "Templates/Directives/test.html",
+            templateUrl: "Templates/Directives/journalizationDetail.html",
             scope: {
                 data: "="
             }
