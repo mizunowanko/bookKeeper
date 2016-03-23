@@ -8,46 +8,46 @@
         <tr>
             <td>
                 <select id="debitAccountLargeCategories[data.row]"
-                        ng-model="debitAccountLargeCategories[data.row]"
+                        ng-model="debitAccountLargeCategory"
                         ng-options="largeCategory.id as largeCategory.name for largeCategory in data.debitAccountLargeCategories"
-                        ng-change="data.changeAccountCategory(debitAccountLargeCategories[data.row], true, true)">
+                        ng-change="data.changeAccountCategory(debitAccountLargeCategory, true, true)">
                     <option value="">大分類</option>
                 </select>
             </td>
             <td>
                 <select id="debitAccountSmallCategories[data.row]"
-                        ng-model="debitAccountSmallCategories[data.row]"
+                        ng-model="debitAccountSmallCategory"
                         ng-options="smallCategory.id as smallCategory.name for smallCategory in data.debitAccountSmallCategories"
-                        ng-change="data.changeAccountCategory(debitAccountSmallCategories[data.row], true, false)">
+                        ng-change="data.changeAccountCategory(debitAccountSmallCategory, true, false)">
                     <option value="">小分類</option>
                 </select>
             </td>
             <td>
                 <select id="debitAccounts[data.row]"
-                        ng-model="debitAccount"
+                        ng-model="data.debitAccount"
                         ng-options="account.id as account.name for account in data.debitAccounts">
                     <option value="">科目</option>
                 </select>
             </td>
             <td>
                 <select id="creditAccountLargeCategories[data.row]"
-                        ng-model="creditAccountLargeCategories[data.row]"
+                        ng-model="creditAccountLargeCategory"
                         ng-options="largeCategory.id as largeCategory.name for largeCategory in data.creditAccountLargeCategories"
-                        ng-change="data.changeAccountCategory(creditAccountLargeCategories[data.row], false, true)">
+                        ng-change="data.changeAccountCategory(creditAccountLargeCategory, false, true)">
                     <option value="">大分類</option>
                 </select>
             </td>
             <td>
                 <select id="creditAccountSmallCategories[data.row]"
-                        ng-model="creditAccountSmallCategories[data.row]"
+                        ng-model="creditAccountSmallCategory"
                         ng-options="smallCategory.id as smallCategory.name for smallCategory in data.creditAccountSmallCategories"
-                        ng-change="data.changeAccountCategory(creditAccountSmallCategories[data.row], false, false)">
+                        ng-change="data.changeAccountCategory(creditAccountSmallCategory, false, false)">
                     <option value="">小分類</option>
                 </select>
             </td>
             <td>
                 <select id="creditAccounts[data.row]"
-                        ng-model="creditAccount"
+                        ng-model="data.creditAccount"
                         ng-options="account.id as account.name for account in data.creditAccounts">
                     <option value="">科目</option>
                 </select>
