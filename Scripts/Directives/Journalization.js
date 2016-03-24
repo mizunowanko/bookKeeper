@@ -3,6 +3,19 @@
  */
 
 app.directive(
+    "journalization",
+    function(){
+        return{
+            restrict: "E",
+            templateUrl: "Templates/Directives/journalization.html",
+            scope: {
+                data: "="
+            }
+        };
+    }
+);
+
+app.directive(
     "journalizationDetail",
     function(){
         return{

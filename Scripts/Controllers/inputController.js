@@ -7,8 +7,8 @@ app.controller("inputController",
     [
         "$scope",
         "$resource",
-        "JournalizationDetailFactory",
-        function($scope, $resource, JournalizationDetailFactory){
+        "journalizationDetailFactory",
+        function($scope, $resource, journalizationDetailFactory){
 
             //科目のデータ取得
             $scope.accountLargeCategories = $resource("APIs/accountLargeCategory.php").query();
@@ -17,10 +17,10 @@ app.controller("inputController",
 
             //仕訳詳細クラスの配列の作成
             $scope.journalizationDetailsList=[
-                JournalizationDetailFactory.create(0, $scope.accountLargeCategories, $scope.accountSmallCategories, $scope.accounts),
-                JournalizationDetailFactory.create(1, $scope.accountLargeCategories, $scope.accountSmallCategories, $scope.accounts),
-                JournalizationDetailFactory.create(2, $scope.accountLargeCategories, $scope.accountSmallCategories, $scope.accounts),
-                JournalizationDetailFactory.create(3, $scope.accountLargeCategories, $scope.accountSmallCategories, $scope.accounts)
+                journalizationDetailFactory.create(0, $scope.accountLargeCategories, $scope.accountSmallCategories, $scope.accounts),
+                journalizationDetailFactory.create(1, $scope.accountLargeCategories, $scope.accountSmallCategories, $scope.accounts),
+                journalizationDetailFactory.create(2, $scope.accountLargeCategories, $scope.accountSmallCategories, $scope.accounts),
+                journalizationDetailFactory.create(3, $scope.accountLargeCategories, $scope.accountSmallCategories, $scope.accounts)
             ];
         }
     ]

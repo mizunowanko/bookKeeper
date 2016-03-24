@@ -3,7 +3,7 @@
  */
 
 //仕訳詳細クラス
-app.factory("JournalizationDetailFactory",
+app.factory("journalizationDetailFactory",
     function(){
         var JournalizationDetail = function(row, accountLargeCategories, accountSmallCategories, accounts){
             //各科目の全データ
@@ -27,24 +27,24 @@ app.factory("JournalizationDetailFactory",
         JournalizationDetail.prototype.changeAccountCategory = function(categoryId, isDebit, isLarge){
             if(isDebit){
                 if(isLarge){
-                    this.debitAccountSmallCategories = _.where(
+                    this.debitAccountSmallCategories = _.filter(
                         this.accountSmallCategories,
                         { account_large_category_id: categoryId }
                     );
                 }else{
-                    this.debitAccounts = _.where(
+                    this.debitAccounts = _.filter(
                         this.accounts,
                         { account_small_category_id: categoryId}
                     );
                 }
             }else{
                 if(isLarge){
-                    this.creditAccountSmallCategories = _.where(
+                    this.creditAccountSmallCategories = _.filter(
                         this.accountSmallCategories,
                         { account_large_category_id: categoryId }
                     );
                 }else{
-                    this.creditAccounts = _.where(
+                    this.creditAccounts = _.filter(
                         this.accounts,
                         { account_small_category_id: categoryId}
                     );
